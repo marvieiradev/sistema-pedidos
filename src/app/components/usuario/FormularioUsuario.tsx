@@ -11,9 +11,9 @@ export interface FormularioUsuarioProps {
 export default function FormularioUsuario(props: FormularioUsuarioProps) {
     return (
         <div className="flex flex-col gap-5">
-            <InputTexto label="Nome" type="text" value={props.usuario.nome} onChange={(e) => props.onChange?.({ ...props.usuario, nome: e.currentTarget.value })} />
-            <InputTexto label="Email" type="email" value={props.usuario.email} onChange={(e) => props.onChange?.({ ...props.usuario, email: e.currentTarget.value })} />
-            <InputTexto label="Senha" type="password" value={props.usuario.senha} onChange={(e) => props.onChange?.({ ...props.usuario, senha: e.currentTarget.value })} />
+            <InputTexto label="Nome" type="text" value={props.usuario.nome} onChange={(e) => props.onChange?.({ ...props.usuario, nome: (e.target as HTMLInputElement).value })} />
+            <InputTexto label="Email" type="email" value={props.usuario.email} onChange={(e) => props.onChange?.({ ...props.usuario, email: (e.target as HTMLInputElement).value })} />
+            <InputTexto label="Senha" type="password" value={props.usuario.senha} onChange={(e) => props.onChange?.({ ...props.usuario, senha: (e.target as HTMLInputElement).value })} />
 
             <div className="flex gap-5">
                 <button className="bg-green-800 text-white p-2 rounded-md" onClick={props.salvar}>Salvar</button>
